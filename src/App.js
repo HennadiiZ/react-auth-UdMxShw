@@ -34,3 +34,5 @@ export default App;
 // Using The Token For Requests To Protected Resources
 
 // Redirecting The User
+
+// Adding Logout
