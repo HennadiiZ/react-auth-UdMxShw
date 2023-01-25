@@ -1,6 +1,6 @@
 import classes from './ProfileForm.module.css';
 import { useRef, useContext } from 'react';
-
+import { useHistory } from 'react-router-dom';
 import AuthContext from '../../store/auth-context';
 
 const API_KEY = 'AIzaSyDdCTqoWnSZH4er7TEcuHrrKO4aKo9PMTI';
@@ -10,6 +10,7 @@ const ProfileForm = () => {
 
   const newPasswordInputRef = useRef();
   const authCtx = useContext(AuthContext);
+  const history = useHistory();
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -31,7 +32,7 @@ const ProfileForm = () => {
         'Authorization': 'Bearer abc',
       }
     }).then(res => {
-
+      history.replace('/');
     })
   };
 
