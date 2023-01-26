@@ -58,3 +58,7 @@ export default App;
 // Adding Logout
 
 // Protecting Frontend Pages
+
+// Persisting The User Authentication 
+
+// Adding Auto-Logout

@@ -64,10 +64,12 @@ const AuthForm = () => {
         }
       })
       .then(data => {
-        // console.log(data);
-        console.log(data.idToken);
+        console.log('+++', data);
+        // console.log(data.idToken);
+        
+        const expirationTime = new Date(new Date().getTime() + (+data.expiresIn * 1000));
+        authCtx.login(data.idToken, expirationTime.toISOString);
         history.replace('/');
-        authCtx.login(data.idToken);
       })
       .catch(err => {
         alert(err.message);
